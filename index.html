@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RB Technical Solutions | Experienced, Personalized IT Consulting</title>
+    <meta name="description" content="RB Technical Solutions — Over 20 years of IT consulting experience in Houston, TX. Small business consulting, network security, managed IT services, and custom solutions.">
+    <meta name="author" content="RB Technical Solutions">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RB Technical Solutions | Experienced, Personalized IT Consulting">
+    <meta property="og:description" content="Over 20 years of personalized IT consulting. Small business consulting, network security, and managed IT services in Houston, TX.">
+    <meta property="og:url" content="https://rbtechs.us">
+    <meta property="og:site_name" content="RB Technical Solutions">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="RB Technical Solutions | Experienced, Personalized IT Consulting">
+    <meta name="twitter:description" content="Over 20 years of personalized IT consulting. Small business consulting, network security, and managed IT services in Houston, TX.">
+
+    <link rel="canonical" href="https://rbtechs.us">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            400: '#3b7bbf',
+                            500: '#1a5a9e',
+                            600: '#174d87',
+                            700: '#143f6e',
+                            800: '#0f2f52',
+                            900: '#0a1f37',
+                            950: '#071525',
+                        },
+                        brand: {
+                            orange: '#e8621a',
+                            'orange-light': '#f07a3a',
+                            'orange-dark': '#c9520f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-nav {
+            background: rgba(7, 21, 37, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #e8621a, #f5a623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, #0f2f52, #071525);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .service-card:hover {
+            transform: scale(1.02);
+            border-color: #e8621a;
+            box-shadow: 0 20px 40px -20px rgba(232, 98, 26, 0.25);
+        }
+
+        section {
+            padding: 100px 20px;
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(26, 90, 158, 0.15) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        /* Circuit trace decoration */
+        .circuit-line {
+            position: relative;
+        }
+        .circuit-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #1a5a9e 20%, #e8621a 80%, transparent);
+        }
+
+        /* Logo monogram */
+        .logo-r {
+            color: #1a5a9e;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+        .logo-b {
+            color: #e8621a;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            margin-left: -0.15em;
+        }
+
+        .narrative-block {
+            border-left: 2px solid #e8621a;
+            padding-left: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-slate-100 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2">
+                <span class="text-3xl font-bold tracking-tighter heading-font"><span class="logo-r">R</span><span class="logo-b">B</span></span>
+                <span class="text-sm font-bold uppercase tracking-[0.15em] text-slate-400 hidden sm:inline">Techs</span>
+            </a>
+            <div class="hidden lg:flex space-x-10 text-xs font-bold uppercase tracking-[0.2em] text-slate-400 items-center">
+                <a href="#services" class="hover:text-brand-orange transition">Services</a>
+                <a href="#about" class="hover:text-brand-orange transition">Why Us</a>
+                <a href="/contact" class="bg-brand-orange text-white px-6 py-2 rounded flex items-center gap-2 hover:bg-brand-orange-light transition">
+                    GET STARTED <i class="fas fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+            <button class="lg:hidden text-2xl" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-navy-950 z-[60] hidden flex flex-col items-center justify-center space-y-8 text-2xl heading-font uppercase">
+        <button class="absolute top-10 right-10 text-3xl" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#about" onclick="toggleMenu()">Why Us</a>
+        <a href="/contact" onclick="toggleMenu()">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center hero-pattern pt-20">
+        <div class="max-w-7xl mx-auto px-6 z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7">
+                <div class="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-orange/30 bg-brand-orange/5 text-brand-orange text-[10px] font-bold uppercase tracking-[0.2em] mb-8">
+                    <span class="flex h-2 w-2 rounded-full bg-brand-orange animate-pulse"></span>
+                    <span>Serving Houston, TX &mdash; 20+ Years in IT</span>
+                </div>
+                <h1 class="text-5xl md:text-8xl font-bold mb-8 leading-[1.1] heading-font">
+                    Experienced, <span class="gradient-text">Personalized</span> IT Consulting.
+                </h1>
+                <p class="text-xl text-slate-400 mb-10 max-w-xl leading-relaxed font-light">
+                    Let us build the infrastructure for your success. Everyone needs support, connectivity, and security — but your specific needs are unique to you.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="/contact" class="bg-brand-orange text-white text-center py-4 px-10 rounded-lg font-bold hover:bg-brand-orange-light transition-all shadow-xl shadow-brand-orange/20">Book a Consultation</a>
+                    <a href="#services" class="border border-navy-700 text-white text-center py-4 px-10 rounded-lg font-bold hover:bg-navy-800 transition">Our Services</a>
+                </div>
+            </div>
+            <div class="hidden lg:block lg:col-span-5 relative">
+                <div class="relative z-10 border border-navy-700 bg-navy-900/50 backdrop-blur-xl p-10 rounded-[40px] shadow-2xl overflow-hidden">
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-brand-orange/10 rounded-full blur-3xl"></div>
+                    <div class="relative">
+                        <i class="fas fa-shield-halved text-6xl text-brand-orange mb-8"></i>
+                        <h4 class="text-3xl font-bold mb-4 heading-font italic">"We build it right."</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Managed IT, network security, and custom solutions tailored to your business.</p>
+                        <hr class="border-navy-800 mb-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-navy-800 rounded-full flex items-center justify-center font-bold border border-navy-700">
+                                <span class="logo-r text-lg">R</span><span class="logo-b text-lg">B</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold uppercase tracking-widest">RB Technical Solutions</p>
+                                <p class="text-[10px] text-slate-500 uppercase tracking-widest">Houston, TX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-navy-900 border-y border-navy-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 heading-font">Our Services</h2>
+                <div class="h-1 w-20 bg-brand-orange mx-auto mb-8"></div>
+                <p class="text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                    Over two decades of hands-on experience, from small business strategy to enterprise network defense.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Small Business Consulting -->
+                <div class="service-card p-10 rounded-[28px] border border-navy-800 text-center">
+                    <div class="w-16 h-16 bg-brand-orange/10 rounded-2xl flex items-center justify-center border border-brand-orange/20 mx-auto mb-6">
+                        <i class="fas fa-briefcase text-2xl text-brand-orange"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 heading-font uppercase">Small Business Consulting</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        We provide owners with resources, advice, and planning designed to improve your organization's performance and efficiency. We help businesses identify problems, implement solutions, and reach goals.
+                    </p>
+                    <a href="/contact" class="text-brand-orange font-bold uppercase text-xs tracking-widest border-b border-brand-orange/50 pb-1">Get Started</a>
+                </div>
+
+                <!-- Computer & Network Security -->
+                <div class="service-card p-10 rounded-[28px] border border-navy-800 text-center">
+                    <div class="w-16 h-16 bg-navy-500/10 rounded-2xl flex items-center justify-center border border-navy-500/20 mx-auto mb-6">
+                        <i class="fas fa-network-wired text-2xl text-navy-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 heading-font uppercase">Computer & Network Security</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        We specialize in the planning, implementation, auditing, monitoring, and management of complete data and network security solutions tailored to your business needs.
+                    </p>
+                    <a href="/contact" class="text-navy-400 font-bold uppercase text-xs tracking-widest border-b border-navy-500/50 pb-1">Learn More</a>
+                </div>
+
+                <!-- Everyday Technical Issues -->
+                <div class="service-card p-10 rounded-[28px] border border-navy-800 text-center">
+                    <div class="w-16 h-16 bg-brand-orange/10 rounded-2xl flex items-center justify-center border border-brand-orange/20 mx-auto mb-6">
+                        <i class="fas fa-headset text-2xl text-brand-orange"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 heading-font uppercase">Everyday Technical Issues</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        Technical assistance and support for computer systems, hardware, and software. We address system and user issues in a timely and professional manner.
+                    </p>
+                    <a href="/contact" class="text-brand-orange font-bold uppercase text-xs tracking-widest border-b border-brand-orange/50 pb-1">Get Help</a>
+                </div>
+            </div>
+
+            <!-- Additional capabilities -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="text-center p-4 rounded-2xl bg-navy-800/50 border border-navy-700">
+                    <i class="fas fa-cloud text-brand-orange mb-2"></i>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Managed IT</p>
+                </div>
+                <div class="text-center p-4 rounded-2xl bg-navy-800/50 border border-navy-700">
+                    <i class="fas fa-virus-slash text-brand-orange mb-2"></i>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Anti-Virus</p>
+                </div>
+                <div class="text-center p-4 rounded-2xl bg-navy-800/50 border border-navy-700">
+                    <i class="fas fa-server text-brand-orange mb-2"></i>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Server Mgmt</p>
+                </div>
+                <div class="text-center p-4 rounded-2xl bg-navy-800/50 border border-navy-700">
+                    <i class="fas fa-wrench text-brand-orange mb-2"></i>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Custom Solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="about" class="bg-navy-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 heading-font">Why RB Technical?</h2>
+                <div class="h-1 w-20 bg-brand-orange mx-auto"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <div class="space-y-10">
+                        <div class="narrative-block">
+                            <h3 class="text-xl font-bold mb-4 text-brand-orange heading-font uppercase">Our Experience</h3>
+                            <p class="text-slate-400 leading-relaxed text-sm">
+                                After two decades in the information technology field, our consultants help technical teams identify gaps and acquire the tools needed for success. We bring real-world expertise to every engagement.
+                            </p>
+                        </div>
+                        <div class="narrative-block">
+                            <h3 class="text-xl font-bold mb-4 text-brand-orange heading-font uppercase">Our Approach</h3>
+                            <p class="text-slate-400 leading-relaxed text-sm">
+                                Every engagement starts with a comprehensive consultation. We deliver detailed reporting with project plans, cost analysis, and scheduling — so you know exactly what to expect from day one.
+                            </p>
+                        </div>
+                        <div class="narrative-block">
+                            <h3 class="text-xl font-bold mb-4 text-brand-orange heading-font uppercase">Why Us?</h3>
+                            <p class="text-slate-400 leading-relaxed text-sm">
+                                We are selective about the relationships we build, ensuring every client receives personalized attention. Our collaborative mentorship model means we're invested in your long-term success, not just a one-time fix.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative bg-gradient-to-br from-brand-orange/20 to-transparent p-1 rounded-3xl">
+                        <div class="bg-navy-950 p-8 rounded-3xl border border-navy-700">
+                            <h3 class="text-2xl font-bold mb-6 heading-font">What We Deliver</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-center space-x-3 text-sm">
+                                    <i class="fas fa-check-circle text-brand-orange"></i>
+                                    <span>Comprehensive IT audits and gap analysis</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm">
+                                    <i class="fas fa-check-circle text-brand-orange"></i>
+                                    <span>Detailed project plans with cost transparency</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm">
+                                    <i class="fas fa-check-circle text-brand-orange"></i>
+                                    <span>End-to-end network security implementation</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm">
+                                    <i class="fas fa-check-circle text-brand-orange"></i>
+                                    <span>Ongoing managed services and help desk support</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm">
+                                    <i class="fas fa-check-circle text-brand-orange"></i>
+                                    <span>Local Houston-area on-site service</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-navy-900 border-t border-navy-800">
+        <div class="max-w-4xl mx-auto px-6 py-20 bg-gradient-to-br from-navy-800 to-navy-900 rounded-[48px] shadow-2xl border border-navy-700 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 heading-font tracking-tight">Let's Talk About Your <span class="gradient-text">IT Needs.</span></h2>
+            <p class="text-slate-400 mb-10 text-lg max-w-xl mx-auto">Everyone needs support, connectivity, and security. The specific needs of your company are unique to you.</p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="/contact" class="bg-brand-orange text-white text-center py-4 px-10 rounded-lg font-bold hover:bg-brand-orange-light transition-all shadow-xl shadow-brand-orange/20">Book a Consultation</a>
+                <a href="tel:8327363240" class="border border-navy-700 text-white text-center py-4 px-10 rounded-lg font-bold hover:bg-navy-800 transition flex items-center justify-center gap-3">
+                    <i class="fas fa-phone"></i> 832-736-3240
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <div class="text-3xl font-bold tracking-tighter heading-font mb-2">
+                    <span class="logo-r">R</span><span class="logo-b">B</span> <span class="text-slate-400 text-lg">Technical Solutions</span>
+                </div>
+                <p class="text-xs text-slate-600 uppercase tracking-widest">Houston, TX &bull; 832-736-3240</p>
+            </div>
+            <div class="flex space-x-6 text-slate-500">
+                <a href="https://facebook.com" target="_blank" class="hover:text-brand-orange transition text-xl"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-brand-orange transition text-xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-brand-orange transition text-xl"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com" target="_blank" class="hover:text-brand-orange transition text-xl"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <div class="text-center mt-12 text-[10px] text-navy-700 tracking-[0.3em] uppercase">
+            &copy; 2025 RB Technical Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                setTimeout(() => menu.classList.remove('opacity-0', 'pointer-events-none'), 10);
+            } else {
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => menu.classList.add('hidden'), 300);
+            }
+        }
+    </script>
+</body>
+</html>
