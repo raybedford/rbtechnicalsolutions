@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RB Technical Solutions | Experienced, Personalized IT Consulting</title>
+    <title>RB Technical Solutions | Experienced, Personalized IT Consulting — Houston, TX</title>
     <meta name="description" content="RB Technical Solutions — Over 20 years of IT consulting experience in Houston, TX. Small business consulting, network security, managed IT services, and custom solutions.">
     <meta name="author" content="RB Technical Solutions">
 
@@ -26,14 +26,18 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: {
-                            400: '#3b7bbf',
-                            500: '#1a5a9e',
-                            600: '#174d87',
-                            700: '#143f6e',
-                            800: '#0f2f52',
-                            900: '#0a1f37',
-                            950: '#071525',
+                        teal: {
+                            50: '#effcfc',
+                            100: '#d6f5f5',
+                            200: '#b0eaec',
+                            300: '#7ad9de',
+                            400: '#3dbfc8',
+                            500: '#0e7490',
+                            600: '#0c6379',
+                            700: '#0a5c73',
+                            800: '#0d4a5c',
+                            900: '#0f3d4e',
+                            950: '#042733',
                         },
                         brand: {
                             orange: '#e8621a',
@@ -47,325 +51,754 @@
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+        *, *::before, *::after { box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             scroll-behavior: smooth;
+            background: #ffffff;
+            color: #1e293b;
         }
 
         .heading-font {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Outfit', sans-serif;
         }
 
+        /* --- NAV --- */
         .glass-nav {
-            background: rgba(7, 21, 37, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(14, 116, 144, 0.06);
+        }
+        .glass-nav.scrolled {
+            box-shadow: 0 1px 24px rgba(14, 116, 144, 0.08);
+        }
+
+        /* --- LOGO --- */
+        .logo-r { color: #0e7490; font-family: 'Outfit', sans-serif; font-weight: 800; }
+        .logo-b { color: #e8621a; font-family: 'Outfit', sans-serif; font-weight: 800; margin-left: -0.12em; }
+
+        /* --- CIRCUIT BOARD PATTERN --- */
+        .circuit-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0v20h20' fill='none' stroke='%230e7490' stroke-width='0.5' opacity='0.08'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%230e7490' opacity='0.06'/%3E%3Cpath d='M60 0v40h40' fill='none' stroke='%230e7490' stroke-width='0.5' opacity='0.08'/%3E%3Ccircle cx='60' cy='40' r='2' fill='%230e7490' opacity='0.06'/%3E%3Cpath d='M100 0v60' fill='none' stroke='%230e7490' stroke-width='0.5' opacity='0.08'/%3E%3Ccircle cx='100' cy='60' r='2' fill='%230e7490' opacity='0.06'/%3E%3Cpath d='M0 80h80v40' fill='none' stroke='%230e7490' stroke-width='0.5' opacity='0.08'/%3E%3Ccircle cx='80' cy='80' r='2' fill='%230e7490' opacity='0.06'/%3E%3Cpath d='M40 60h40' fill='none' stroke='%230e7490' stroke-width='0.5' opacity='0.05'/%3E%3Ccircle cx='40' cy='60' r='1.5' fill='%230e7490' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        .circuit-dark {
+            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0v20h20' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.06'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%23ffffff' opacity='0.04'/%3E%3Cpath d='M60 0v40h40' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.06'/%3E%3Ccircle cx='60' cy='40' r='2' fill='%23ffffff' opacity='0.04'/%3E%3Cpath d='M100 0v60' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.06'/%3E%3Ccircle cx='100' cy='60' r='2' fill='%23ffffff' opacity='0.04'/%3E%3Cpath d='M0 80h80v40' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.06'/%3E%3Ccircle cx='80' cy='80' r='2' fill='%23ffffff' opacity='0.04'/%3E%3C/svg%3E");
+        }
+
+        /* --- SECTIONS --- */
+        section { padding: 120px 20px; }
+
+        /* --- CARDS --- */
+        .service-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px -12px rgba(14, 116, 144, 0.12);
+            border-color: #0e7490;
+        }
+
+        .pricing-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .pricing-card:hover {
+            transform: translateY(-4px);
+        }
+        .pricing-featured {
+            background: linear-gradient(135deg, #0e7490, #0a5c73);
+            transform: scale(1.02);
+        }
+        .pricing-featured:hover {
+            transform: scale(1.02) translateY(-4px);
+            box-shadow: 0 32px 64px -16px rgba(14, 116, 144, 0.3);
+        }
+
+        .testimonial-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px -8px rgba(14, 116, 144, 0.08);
+        }
+
+        /* --- ACCENT ELEMENTS --- */
+        .accent-line {
+            width: 48px;
+            height: 3px;
+            background: #e8621a;
         }
 
         .gradient-text {
-            background: linear-gradient(90deg, #e8621a, #f5a623);
+            background: linear-gradient(135deg, #0e7490, #3dbfc8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .service-card {
-            background: linear-gradient(145deg, #0f2f52, #071525);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .orange-gradient-text {
+            background: linear-gradient(135deg, #e8621a, #f07a3a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .service-card:hover {
-            transform: scale(1.02);
-            border-color: #e8621a;
-            box-shadow: 0 20px 40px -20px rgba(232, 98, 26, 0.25);
-        }
-
-        section {
-            padding: 100px 20px;
-        }
-
-        .hero-pattern {
-            background-image: radial-gradient(circle at 2px 2px, rgba(26, 90, 158, 0.15) 1px, transparent 0);
-            background-size: 40px 40px;
-        }
-
-        /* Circuit trace decoration */
-        .circuit-line {
+        /* --- NODE DECORATION --- */
+        .node-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #0e7490;
             position: relative;
         }
-        .circuit-line::after {
+        .node-dot::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            border: 1px solid rgba(14, 116, 144, 0.2);
+        }
+
+        /* --- CIRCUIT TRACE DIVIDER --- */
+        .trace-divider {
             height: 2px;
-            background: linear-gradient(90deg, transparent, #1a5a9e 20%, #e8621a 80%, transparent);
+            background: linear-gradient(90deg, transparent, #0e7490 20%, #e8621a 80%, transparent);
+            opacity: 0.15;
         }
 
-        /* Logo monogram */
-        .logo-r {
-            color: #1a5a9e;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
+        /* --- ANIMATIONS --- */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .logo-b {
-            color: #e8621a;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            margin-left: -0.15em;
+        @keyframes nodeGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(14, 116, 144, 0.3); }
+            50% { box-shadow: 0 0 0 6px rgba(14, 116, 144, 0); }
         }
 
+        .hero-animate {
+            animation: fadeUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) both;
+        }
+        .hero-delay-1 { animation-delay: 0.1s; }
+        .hero-delay-2 { animation-delay: 0.25s; }
+        .hero-delay-3 { animation-delay: 0.4s; }
+        .hero-delay-4 { animation-delay: 0.55s; }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .node-pulse { animation: nodeGlow 3s infinite; }
+
+        /* --- NARRATIVE BLOCK --- */
         .narrative-block {
             border-left: 2px solid #e8621a;
             padding-left: 1.5rem;
         }
+
+        /* --- CAPABILITY TAG --- */
+        .cap-tag {
+            transition: all 0.3s ease;
+        }
+        .cap-tag:hover {
+            border-color: #0e7490;
+            background: rgba(14, 116, 144, 0.04);
+        }
     </style>
 </head>
-<body class="bg-navy-950 text-slate-100 antialiased">
+<body class="antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav">
+    <nav id="main-nav" class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="flex items-center gap-2">
-                <span class="text-3xl font-bold tracking-tighter heading-font"><span class="logo-r">R</span><span class="logo-b">B</span></span>
-                <span class="text-sm font-bold uppercase tracking-[0.15em] text-slate-400 hidden sm:inline">Techs</span>
+                <span class="text-3xl font-bold tracking-tighter"><span class="logo-r">R</span><span class="logo-b">B</span></span>
+                <span class="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 hidden sm:inline heading-font">Technical Solutions</span>
             </a>
-            <div class="hidden lg:flex space-x-10 text-xs font-bold uppercase tracking-[0.2em] text-slate-400 items-center">
-                <a href="#services" class="hover:text-brand-orange transition">Services</a>
-                <a href="#about" class="hover:text-brand-orange transition">Why Us</a>
-                <a href="/contact" class="bg-brand-orange text-white px-6 py-2 rounded flex items-center gap-2 hover:bg-brand-orange-light transition">
-                    GET STARTED <i class="fas fa-arrow-right text-[10px]"></i>
+            <div class="hidden lg:flex items-center space-x-10 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                <a href="#services" class="hover:text-teal-500 transition">Services</a>
+                <a href="#pricing" class="hover:text-teal-500 transition">Pricing</a>
+                <a href="#about" class="hover:text-teal-500 transition">Why Us</a>
+                <a href="/contact" class="bg-brand-orange text-white px-6 py-2.5 rounded-lg flex items-center gap-2 hover:bg-brand-orange-light transition shadow-sm shadow-brand-orange/15">
+                    GET STARTED <i class="fas fa-arrow-right text-[9px]"></i>
                 </a>
             </div>
-            <button class="lg:hidden text-2xl" onclick="toggleMenu()">
+            <button class="lg:hidden text-2xl text-teal-700" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-navy-950 z-[60] hidden flex flex-col items-center justify-center space-y-8 text-2xl heading-font uppercase">
-        <button class="absolute top-10 right-10 text-3xl" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
-        <a href="#services" onclick="toggleMenu()">Services</a>
-        <a href="#about" onclick="toggleMenu()">Why Us</a>
-        <a href="/contact" onclick="toggleMenu()">Contact</a>
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] hidden flex flex-col items-center justify-center space-y-8 text-2xl heading-font font-bold">
+        <button class="absolute top-10 right-10 text-3xl text-teal-700" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+        <a href="#services" onclick="toggleMenu()" class="text-teal-700">Services</a>
+        <a href="#pricing" onclick="toggleMenu()" class="text-teal-700">Pricing</a>
+        <a href="#about" onclick="toggleMenu()" class="text-teal-700">Why Us</a>
+        <a href="/contact" onclick="toggleMenu()" class="text-brand-orange">Contact</a>
     </div>
 
-    <!-- Hero Section -->
-    <header class="relative min-h-screen flex items-center justify-center hero-pattern pt-20">
-        <div class="max-w-7xl mx-auto px-6 z-10 grid lg:grid-cols-12 gap-12 items-center">
+    <!-- ==================== HERO ==================== -->
+    <header class="relative min-h-screen flex items-center circuit-pattern pt-20 overflow-hidden">
+        <!-- Decorative blurs -->
+        <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-teal-500/[0.04] rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-orange/[0.03] rounded-full blur-[80px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 z-10 grid lg:grid-cols-12 gap-16 items-center">
             <div class="lg:col-span-7">
-                <div class="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-orange/30 bg-brand-orange/5 text-brand-orange text-[10px] font-bold uppercase tracking-[0.2em] mb-8">
-                    <span class="flex h-2 w-2 rounded-full bg-brand-orange animate-pulse"></span>
-                    <span>Serving Houston, TX &mdash; 20+ Years in IT</span>
+                <div class="hero-animate hero-delay-1 inline-flex items-center space-x-3 px-5 py-2 rounded-full border border-teal-500/15 bg-teal-500/[0.04] text-teal-700 text-[10px] font-bold uppercase tracking-[0.2em] mb-10">
+                    <span class="node-dot node-pulse" style="width:6px;height:6px;"></span>
+                    <span>20+ Years in IT &mdash; Houston, TX</span>
                 </div>
-                <h1 class="text-5xl md:text-8xl font-bold mb-8 leading-[1.1] heading-font">
-                    Experienced, <span class="gradient-text">Personalized</span> IT Consulting.
+                <h1 class="hero-animate hero-delay-2 text-5xl md:text-7xl lg:text-[5.2rem] font-extrabold mb-8 leading-[1.05] heading-font text-slate-900">
+                    IT That Works <br>As Hard As <span class="orange-gradient-text">You Do.</span>
                 </h1>
-                <p class="text-xl text-slate-400 mb-10 max-w-xl leading-relaxed font-light">
-                    Let us build the infrastructure for your success. Everyone needs support, connectivity, and security — but your specific needs are unique to you.
+                <p class="hero-animate hero-delay-3 text-lg md:text-xl text-slate-500 mb-12 max-w-lg leading-relaxed">
+                    Personalized consulting, network security, and managed services tailored to your business. Everyone needs support — your specific needs are unique to you.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-5">
-                    <a href="/contact" class="bg-brand-orange text-white text-center py-4 px-10 rounded-lg font-bold hover:bg-brand-orange-light transition-all shadow-xl shadow-brand-orange/20">Book a Consultation</a>
-                    <a href="#services" class="border border-navy-700 text-white text-center py-4 px-10 rounded-lg font-bold hover:bg-navy-800 transition">Our Services</a>
+                <div class="hero-animate hero-delay-4 flex flex-col sm:flex-row gap-4">
+                    <a href="#pricing" class="bg-brand-orange text-white text-center py-4 px-10 rounded-xl font-bold text-sm tracking-wide hover:bg-brand-orange-light transition-all shadow-lg shadow-brand-orange/20 heading-font">See Our Plans</a>
+                    <a href="#services" class="border border-slate-200 text-slate-700 text-center py-4 px-10 rounded-xl font-bold text-sm tracking-wide hover:border-teal-500/30 hover:bg-teal-50/50 transition heading-font">Our Services</a>
                 </div>
             </div>
+
             <div class="hidden lg:block lg:col-span-5 relative">
-                <div class="relative z-10 border border-navy-700 bg-navy-900/50 backdrop-blur-xl p-10 rounded-[40px] shadow-2xl overflow-hidden">
-                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-brand-orange/10 rounded-full blur-3xl"></div>
-                    <div class="relative">
-                        <i class="fas fa-shield-halved text-6xl text-brand-orange mb-8"></i>
-                        <h4 class="text-3xl font-bold mb-4 heading-font italic">"We build it right."</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Managed IT, network security, and custom solutions tailored to your business.</p>
-                        <hr class="border-navy-800 mb-6">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-navy-800 rounded-full flex items-center justify-center font-bold border border-navy-700">
-                                <span class="logo-r text-lg">R</span><span class="logo-b text-lg">B</span>
+                <div class="hero-animate hero-delay-3 relative">
+                    <!-- Layered card background -->
+                    <div class="absolute -top-4 -left-4 w-full h-full bg-teal-500/[0.04] rounded-[28px]"></div>
+                    <div class="absolute -bottom-3 -right-3 w-full h-full border border-brand-orange/10 rounded-[28px]"></div>
+
+                    <div class="relative bg-white border border-slate-100 p-10 rounded-[28px] shadow-xl shadow-teal-900/[0.06] overflow-hidden">
+                        <!-- Circuit trace decoration inside card -->
+                        <div class="absolute top-0 right-0 w-32 h-32 opacity-30">
+                            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M120 0v40h-40" stroke="#0e7490" stroke-width="1" opacity="0.3"/>
+                                <circle cx="80" cy="40" r="3" fill="#0e7490" opacity="0.2"/>
+                                <path d="M120 60v30h-60" stroke="#0e7490" stroke-width="1" opacity="0.2"/>
+                                <circle cx="60" cy="90" r="3" fill="#e8621a" opacity="0.3"/>
+                                <path d="M80 0v20" stroke="#0e7490" stroke-width="1" opacity="0.2"/>
+                                <circle cx="80" cy="20" r="2" fill="#0e7490" opacity="0.15"/>
+                            </svg>
+                        </div>
+
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-8">
+                                <span class="text-4xl font-bold tracking-tighter"><span class="logo-r">R</span><span class="logo-b">B</span></span>
+                                <span class="text-xs font-bold uppercase tracking-widest text-slate-400 heading-font">Techs</span>
                             </div>
-                            <div>
-                                <p class="text-sm font-bold uppercase tracking-widest">RB Technical Solutions</p>
-                                <p class="text-[10px] text-slate-500 uppercase tracking-widest">Houston, TX</p>
+
+                            <div class="space-y-5">
+                                <div class="flex items-center gap-4 p-4 rounded-2xl bg-teal-50/50 border border-teal-100/60">
+                                    <div class="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-shield-halved text-teal-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-slate-800">Network Security</p>
+                                        <p class="text-xs text-slate-400">End-to-end protection</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 p-4 rounded-2xl bg-orange-50/50 border border-orange-100/60">
+                                    <div class="w-10 h-10 rounded-xl bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-cloud text-brand-orange text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-slate-800">Managed IT</p>
+                                        <p class="text-xs text-slate-400">Always-on support</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 p-4 rounded-2xl bg-teal-50/50 border border-teal-100/60">
+                                    <div class="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-wrench text-teal-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-slate-800">Custom Solutions</p>
+                                        <p class="text-xs text-slate-400">Built for your business</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 pt-6 border-t border-slate-100 flex items-center gap-3">
+                                <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-[0.15em] font-bold">Serving Houston & Beyond</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="absolute bottom-0 left-0 right-0 trace-divider"></div>
     </header>
 
-    <!-- Services Section -->
-    <section id="services" class="bg-navy-900 border-y border-navy-800">
+    <!-- ==================== SERVICES ==================== -->
+    <section id="services" class="bg-[#f7f8fa]">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 heading-font">Our Services</h2>
-                <div class="h-1 w-20 bg-brand-orange mx-auto mb-8"></div>
-                <p class="text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+            <div class="text-center mb-20 animate-on-scroll">
+                <div class="accent-line mx-auto mb-8"></div>
+                <h2 class="text-4xl md:text-5xl font-extrabold heading-font text-slate-900 mb-6">What We Do</h2>
+                <p class="text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
                     Over two decades of hands-on experience, from small business strategy to enterprise network defense.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Small Business Consulting -->
-                <div class="service-card p-10 rounded-[28px] border border-navy-800 text-center">
-                    <div class="w-16 h-16 bg-brand-orange/10 rounded-2xl flex items-center justify-center border border-brand-orange/20 mx-auto mb-6">
-                        <i class="fas fa-briefcase text-2xl text-brand-orange"></i>
+                <div class="service-card bg-white border border-slate-100 rounded-[24px] p-10 shadow-sm animate-on-scroll">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-orange/[0.06] border border-brand-orange/10 flex items-center justify-center mb-7">
+                        <i class="fas fa-briefcase text-xl text-brand-orange"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 heading-font uppercase">Small Business Consulting</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                        We provide owners with resources, advice, and planning designed to improve your organization's performance and efficiency. We help businesses identify problems, implement solutions, and reach goals.
-                    </p>
-                    <a href="/contact" class="text-brand-orange font-bold uppercase text-xs tracking-widest border-b border-brand-orange/50 pb-1">Get Started</a>
+                    <h3 class="text-xl font-bold mb-4 heading-font text-slate-900">Small Business Consulting</h3>
+                    <ul class="space-y-3 text-sm text-slate-500 leading-relaxed mb-8">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Performance & efficiency assessments</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Technology roadmap & implementation</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Cost analysis & budget optimization</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Vendor selection & management</span>
+                        </li>
+                    </ul>
+                    <a href="/contact" class="text-brand-orange font-bold uppercase text-[10px] tracking-[0.15em] border-b border-brand-orange/30 pb-1 hover:border-brand-orange transition">Get Started</a>
                 </div>
 
-                <!-- Computer & Network Security -->
-                <div class="service-card p-10 rounded-[28px] border border-navy-800 text-center">
-                    <div class="w-16 h-16 bg-navy-500/10 rounded-2xl flex items-center justify-center border border-navy-500/20 mx-auto mb-6">
-                        <i class="fas fa-network-wired text-2xl text-navy-400"></i>
+                <!-- Network Security -->
+                <div class="service-card bg-white border border-slate-100 rounded-[24px] p-10 shadow-sm animate-on-scroll">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-500/[0.06] border border-teal-500/10 flex items-center justify-center mb-7">
+                        <i class="fas fa-shield-halved text-xl text-teal-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 heading-font uppercase">Computer & Network Security</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                        We specialize in the planning, implementation, auditing, monitoring, and management of complete data and network security solutions tailored to your business needs.
-                    </p>
-                    <a href="/contact" class="text-navy-400 font-bold uppercase text-xs tracking-widest border-b border-navy-500/50 pb-1">Learn More</a>
+                    <h3 class="text-xl font-bold mb-4 heading-font text-slate-900">Computer & Network Security</h3>
+                    <ul class="space-y-3 text-sm text-slate-500 leading-relaxed mb-8">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Firewall & intrusion prevention</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Security audits & vulnerability scans</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Email security & anti-phishing</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Compliance & policy consulting</span>
+                        </li>
+                    </ul>
+                    <a href="/contact" class="text-teal-600 font-bold uppercase text-[10px] tracking-[0.15em] border-b border-teal-500/30 pb-1 hover:border-teal-500 transition">Learn More</a>
                 </div>
 
-                <!-- Everyday Technical Issues -->
-                <div class="service-card p-10 rounded-[28px] border border-navy-800 text-center">
-                    <div class="w-16 h-16 bg-brand-orange/10 rounded-2xl flex items-center justify-center border border-brand-orange/20 mx-auto mb-6">
-                        <i class="fas fa-headset text-2xl text-brand-orange"></i>
+                <!-- Technical Support -->
+                <div class="service-card bg-white border border-slate-100 rounded-[24px] p-10 shadow-sm animate-on-scroll">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-orange/[0.06] border border-brand-orange/10 flex items-center justify-center mb-7">
+                        <i class="fas fa-headset text-xl text-brand-orange"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 heading-font uppercase">Everyday Technical Issues</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                        Technical assistance and support for computer systems, hardware, and software. We address system and user issues in a timely and professional manner.
-                    </p>
-                    <a href="/contact" class="text-brand-orange font-bold uppercase text-xs tracking-widest border-b border-brand-orange/50 pb-1">Get Help</a>
+                    <h3 class="text-xl font-bold mb-4 heading-font text-slate-900">Everyday Technical Support</h3>
+                    <ul class="space-y-3 text-sm text-slate-500 leading-relaxed mb-8">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Remote & on-site troubleshooting</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Hardware & software diagnostics</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>System setup & data migration</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-check text-teal-500 text-xs mt-1.5 flex-shrink-0"></i>
+                            <span>Timely, professional resolution</span>
+                        </li>
+                    </ul>
+                    <a href="/contact" class="text-brand-orange font-bold uppercase text-[10px] tracking-[0.15em] border-b border-brand-orange/30 pb-1 hover:border-brand-orange transition">Get Help</a>
                 </div>
             </div>
 
-            <!-- Additional capabilities -->
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                <div class="text-center p-4 rounded-2xl bg-navy-800/50 border border-navy-700">
-                    <i class="fas fa-cloud text-brand-orange mb-2"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Managed IT</p>
+            <!-- Capability Tags -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto animate-on-scroll">
+                <div class="cap-tag text-center p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                    <i class="fas fa-cloud text-teal-500 mb-2"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 heading-font">Managed IT</p>
                 </div>
-                <div class="text-center p-4 rounded-2xl bg-navy-800/50 border border-navy-700">
+                <div class="cap-tag text-center p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
                     <i class="fas fa-virus-slash text-brand-orange mb-2"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Anti-Virus</p>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 heading-font">Anti-Virus</p>
                 </div>
-                <div class="text-center p-4 rounded-2xl bg-navy-800/50 border border-navy-700">
-                    <i class="fas fa-server text-brand-orange mb-2"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Server Mgmt</p>
+                <div class="cap-tag text-center p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                    <i class="fas fa-server text-teal-500 mb-2"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 heading-font">Server Mgmt</p>
                 </div>
-                <div class="text-center p-4 rounded-2xl bg-navy-800/50 border border-navy-700">
+                <div class="cap-tag text-center p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
                     <i class="fas fa-wrench text-brand-orange mb-2"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Custom Solutions</p>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 heading-font">Custom Solutions</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Us Section -->
-    <section id="about" class="bg-navy-950">
+    <!-- ==================== PRICING ==================== -->
+    <section id="pricing" class="bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 heading-font">Why RB Technical?</h2>
-                <div class="h-1 w-20 bg-brand-orange mx-auto"></div>
+            <div class="text-center mb-20 animate-on-scroll">
+                <div class="accent-line mx-auto mb-8"></div>
+                <h2 class="text-4xl md:text-5xl font-extrabold heading-font text-slate-900 mb-6">Plans That Fit Your Business</h2>
+                <p class="text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
+                    Transparent, flexible plans designed for businesses at every stage. No hidden fees, no surprises.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
+
+                <!-- Essential -->
+                <div class="pricing-card bg-white border border-slate-100 rounded-[24px] p-10 shadow-sm animate-on-scroll">
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold heading-font text-slate-900 mb-1">Essential</h3>
+                        <p class="text-xs text-slate-400">For small teams getting started</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-4xl font-extrabold heading-font text-slate-900">Custom</span>
+                        <span class="text-sm text-slate-400 ml-1">/ month</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-500 mb-10">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-check-circle text-teal-500 text-xs"></i>
+                            <span>Remote help desk support</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-check-circle text-teal-500 text-xs"></i>
+                            <span>Basic network monitoring</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-check-circle text-teal-500 text-xs"></i>
+                            <span>Anti-virus management</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-check-circle text-teal-500 text-xs"></i>
+                            <span>Email support</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 text-slate-300">
+                            <i class="fas fa-minus text-xs"></i>
+                            <span>On-site visits</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 text-slate-300">
+                            <i class="fas fa-minus text-xs"></i>
+                            <span>Dedicated account manager</span>
+                        </li>
+                    </ul>
+                    <a href="/contact" class="block text-center py-4 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm tracking-wide hover:border-teal-500 hover:text-teal-600 transition heading-font">Get a Quote</a>
+                </div>
+
+                <!-- Professional (Featured) -->
+                <div class="pricing-card pricing-featured rounded-[24px] p-10 shadow-xl shadow-teal-900/20 text-white relative overflow-hidden animate-on-scroll">
+                    <!-- Circuit trace in background -->
+                    <div class="absolute top-0 right-0 w-40 h-40 opacity-20">
+                        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M120 0v50h-50" stroke="white" stroke-width="1"/>
+                            <circle cx="70" cy="50" r="3" fill="white"/>
+                            <path d="M90 0v30" stroke="white" stroke-width="1" opacity="0.5"/>
+                            <circle cx="90" cy="30" r="2" fill="white" opacity="0.5"/>
+                        </svg>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <h3 class="text-lg font-bold heading-font mb-1">Professional</h3>
+                                <p class="text-xs text-teal-200">Most popular for growing businesses</p>
+                            </div>
+                            <span class="bg-brand-orange text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Popular</span>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold heading-font">Custom</span>
+                            <span class="text-sm text-teal-200 ml-1">/ month</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-teal-50 mb-10">
+                            <li class="flex items-center gap-2.5">
+                                <i class="fas fa-check-circle text-brand-orange-light text-xs"></i>
+                                <span>Everything in Essential</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fas fa-check-circle text-brand-orange-light text-xs"></i>
+                                <span>On-site visits (Houston area)</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fas fa-check-circle text-brand-orange-light text-xs"></i>
+                                <span>Full network security suite</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fas fa-check-circle text-brand-orange-light text-xs"></i>
+                                <span>Priority response (4-hour SLA)</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fas fa-check-circle text-brand-orange-light text-xs"></i>
+                                <span>Quarterly security audits</span>
+                            </li>
+                            <li class="flex items-center gap-2.5 text-teal-300/50">
+                                <i class="fas fa-minus text-xs"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                        </ul>
+                        <a href="/contact" class="block text-center py-4 rounded-xl bg-white text-teal-700 font-bold text-sm tracking-wide hover:bg-teal-50 transition heading-font shadow-lg">Get a Quote</a>
+                    </div>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="pricing-card bg-white border border-slate-100 rounded-[24px] p-10 shadow-sm animate-on-scroll">
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold heading-font text-slate-900 mb-1">Enterprise</h3>
+                        <p class="text-xs text-slate-400">Full-service managed IT</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-4xl font-extrabold heading-font text-slate-900">Custom</span>
+                        <span class="text-sm text-slate-400 ml-1">/ month</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-500 mb-10">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-check-circle text-teal-500 text-xs"></i>
+                            <span>Everything in Professional</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-check-circle text-teal-500 text-xs"></i>
+                            <span>Dedicated account manager</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-check-circle text-teal-500 text-xs"></i>
+                            <span>24/7 monitoring & response</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-check-circle text-teal-500 text-xs"></i>
+                            <span>Custom solution architecture</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-check-circle text-teal-500 text-xs"></i>
+                            <span>Server & cloud management</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-check-circle text-teal-500 text-xs"></i>
+                            <span>Strategic IT planning</span>
+                        </li>
+                    </ul>
+                    <a href="/contact" class="block text-center py-4 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm tracking-wide hover:border-teal-500 hover:text-teal-600 transition heading-font">Get a Quote</a>
+                </div>
+
+            </div>
+
+            <p class="text-center text-xs text-slate-400 mt-10 animate-on-scroll">All plans are customized to your specific needs. <a href="/contact" class="text-teal-600 font-semibold hover:underline">Contact us</a> for a personalized consultation.</p>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="bg-[#f7f8fa]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 animate-on-scroll">
+                <div class="accent-line mx-auto mb-8"></div>
+                <h2 class="text-4xl md:text-5xl font-extrabold heading-font text-slate-900 mb-6">What Clients Say</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="testimonial-card bg-white border border-slate-100 rounded-[24px] p-8 shadow-sm animate-on-scroll">
+                    <div class="flex gap-1 mb-6">
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-8 italic">
+                        "RB Technical took the time to understand our unique challenges. They didn't just fix the problem — they built a system that prevents it from happening again."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center">
+                            <span class="text-xs font-bold text-teal-600">MJ</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-800">Michael J.</p>
+                            <p class="text-[10px] text-slate-400 uppercase tracking-widest">Small Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white border border-slate-100 rounded-[24px] p-8 shadow-sm animate-on-scroll">
+                    <div class="flex gap-1 mb-6">
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-8 italic">
+                        "After years of rotating through different IT vendors, RB Technical finally gave us the personalized attention we needed. They feel like part of our team."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-orange/10 flex items-center justify-center">
+                            <span class="text-xs font-bold text-brand-orange">SL</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-800">Sandra L.</p>
+                            <p class="text-[10px] text-slate-400 uppercase tracking-widest">Office Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white border border-slate-100 rounded-[24px] p-8 shadow-sm animate-on-scroll">
+                    <div class="flex gap-1 mb-6">
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-8 italic">
+                        "Professional, responsive, and genuinely invested in our success. The network security overhaul they did for us was seamless and thorough."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center">
+                            <span class="text-xs font-bold text-teal-600">DW</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-800">David W.</p>
+                            <p class="text-[10px] text-slate-400 uppercase tracking-widest">Operations Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHY US ==================== -->
+    <section id="about" class="bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 animate-on-scroll">
+                <div class="accent-line mx-auto mb-8"></div>
+                <h2 class="text-4xl md:text-5xl font-extrabold heading-font text-slate-900 mb-6">Why RB Technical?</h2>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div>
                     <div class="space-y-10">
-                        <div class="narrative-block">
-                            <h3 class="text-xl font-bold mb-4 text-brand-orange heading-font uppercase">Our Experience</h3>
-                            <p class="text-slate-400 leading-relaxed text-sm">
+                        <div class="narrative-block animate-on-scroll">
+                            <h3 class="text-sm font-bold mb-4 text-brand-orange uppercase tracking-[0.15em] heading-font">Our Experience</h3>
+                            <p class="text-slate-500 leading-relaxed text-[15px]">
                                 After two decades in the information technology field, our consultants help technical teams identify gaps and acquire the tools needed for success. We bring real-world expertise to every engagement.
                             </p>
                         </div>
-                        <div class="narrative-block">
-                            <h3 class="text-xl font-bold mb-4 text-brand-orange heading-font uppercase">Our Approach</h3>
-                            <p class="text-slate-400 leading-relaxed text-sm">
+                        <div class="narrative-block animate-on-scroll">
+                            <h3 class="text-sm font-bold mb-4 text-brand-orange uppercase tracking-[0.15em] heading-font">Our Approach</h3>
+                            <p class="text-slate-500 leading-relaxed text-[15px]">
                                 Every engagement starts with a comprehensive consultation. We deliver detailed reporting with project plans, cost analysis, and scheduling — so you know exactly what to expect from day one.
                             </p>
                         </div>
-                        <div class="narrative-block">
-                            <h3 class="text-xl font-bold mb-4 text-brand-orange heading-font uppercase">Why Us?</h3>
-                            <p class="text-slate-400 leading-relaxed text-sm">
+                        <div class="narrative-block animate-on-scroll">
+                            <h3 class="text-sm font-bold mb-4 text-brand-orange uppercase tracking-[0.15em] heading-font">Why Us?</h3>
+                            <p class="text-slate-500 leading-relaxed text-[15px]">
                                 We are selective about the relationships we build, ensuring every client receives personalized attention. Our collaborative mentorship model means we're invested in your long-term success, not just a one-time fix.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div class="relative bg-gradient-to-br from-brand-orange/20 to-transparent p-1 rounded-3xl">
-                        <div class="bg-navy-950 p-8 rounded-3xl border border-navy-700">
-                            <h3 class="text-2xl font-bold mb-6 heading-font">What We Deliver</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-center space-x-3 text-sm">
-                                    <i class="fas fa-check-circle text-brand-orange"></i>
-                                    <span>Comprehensive IT audits and gap analysis</span>
-                                </li>
-                                <li class="flex items-center space-x-3 text-sm">
-                                    <i class="fas fa-check-circle text-brand-orange"></i>
-                                    <span>Detailed project plans with cost transparency</span>
-                                </li>
-                                <li class="flex items-center space-x-3 text-sm">
-                                    <i class="fas fa-check-circle text-brand-orange"></i>
-                                    <span>End-to-end network security implementation</span>
-                                </li>
-                                <li class="flex items-center space-x-3 text-sm">
-                                    <i class="fas fa-check-circle text-brand-orange"></i>
-                                    <span>Ongoing managed services and help desk support</span>
-                                </li>
-                                <li class="flex items-center space-x-3 text-sm">
-                                    <i class="fas fa-check-circle text-brand-orange"></i>
-                                    <span>Local Houston-area on-site service</span>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="animate-on-scroll">
+                    <div class="bg-[#f7f8fa] border border-slate-100 p-10 rounded-[28px] shadow-sm">
+                        <h3 class="text-xl font-bold mb-8 heading-font text-slate-900">What We Deliver</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-3 text-sm text-slate-600">
+                                <i class="fas fa-check-circle text-teal-500"></i>
+                                <span>Comprehensive IT audits and gap analysis</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-sm text-slate-600">
+                                <i class="fas fa-check-circle text-teal-500"></i>
+                                <span>Detailed project plans with cost transparency</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-sm text-slate-600">
+                                <i class="fas fa-check-circle text-teal-500"></i>
+                                <span>End-to-end network security implementation</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-sm text-slate-600">
+                                <i class="fas fa-check-circle text-teal-500"></i>
+                                <span>Ongoing managed services and help desk support</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-sm text-slate-600">
+                                <i class="fas fa-check-circle text-teal-500"></i>
+                                <span>Local Houston-area on-site service</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="bg-navy-900 border-t border-navy-800">
-        <div class="max-w-4xl mx-auto px-6 py-20 bg-gradient-to-br from-navy-800 to-navy-900 rounded-[48px] shadow-2xl border border-navy-700 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 heading-font tracking-tight">Let's Talk About Your <span class="gradient-text">IT Needs.</span></h2>
-            <p class="text-slate-400 mb-10 text-lg max-w-xl mx-auto">Everyone needs support, connectivity, and security. The specific needs of your company are unique to you.</p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center">
-                <a href="/contact" class="bg-brand-orange text-white text-center py-4 px-10 rounded-lg font-bold hover:bg-brand-orange-light transition-all shadow-xl shadow-brand-orange/20">Book a Consultation</a>
-                <a href="tel:8327363240" class="border border-navy-700 text-white text-center py-4 px-10 rounded-lg font-bold hover:bg-navy-800 transition flex items-center justify-center gap-3">
-                    <i class="fas fa-phone"></i> 832-736-3240
+    <!-- ==================== CTA ==================== -->
+    <section class="bg-teal-500 relative overflow-hidden circuit-dark">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-orange/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 animate-on-scroll">
+            <h2 class="text-4xl md:text-5xl font-extrabold heading-font text-white mb-6">
+                Let's Talk About Your <span class="text-brand-orange-light">IT Needs.</span>
+            </h2>
+            <p class="text-lg text-white/70 mb-12 max-w-xl mx-auto leading-relaxed">
+                Everyone needs support, connectivity, and security. The specific needs of your company are unique to you.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" class="bg-white text-teal-700 text-center py-4 px-10 rounded-xl font-bold text-sm tracking-wide hover:bg-teal-50 transition-all shadow-lg heading-font">Book a Consultation</a>
+                <a href="tel:8327363240" class="border border-white/25 text-white text-center py-4 px-10 rounded-xl font-bold text-sm tracking-wide hover:bg-white/10 transition flex items-center justify-center gap-3 heading-font">
+                    <i class="fas fa-phone text-xs"></i> 832-736-3240
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-20 border-t border-navy-800">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-6 md:mb-0 text-center md:text-left">
-                <div class="text-3xl font-bold tracking-tighter heading-font mb-2">
-                    <span class="logo-r">R</span><span class="logo-b">B</span> <span class="text-slate-400 text-lg">Technical Solutions</span>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-teal-950 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-3xl font-bold tracking-tighter"><span style="color:#3dbfc8">R</span><span style="color:#f07a3a">B</span></span>
+                        <span class="text-[11px] font-bold uppercase tracking-[0.15em] text-white/60 heading-font">Technical Solutions</span>
+                    </div>
+                    <p class="text-xs text-white/25 uppercase tracking-widest">Houston, TX &bull; 832-736-3240</p>
                 </div>
-                <p class="text-xs text-slate-600 uppercase tracking-widest">Houston, TX &bull; 832-736-3240</p>
+                <div class="flex space-x-8 text-[11px] font-bold uppercase tracking-[0.15em] text-white/30">
+                    <a href="#services" class="hover:text-white transition">Services</a>
+                    <a href="#pricing" class="hover:text-white transition">Pricing</a>
+                    <a href="#about" class="hover:text-white transition">Why Us</a>
+                    <a href="https://linkedin.com" target="_blank" class="hover:text-white transition"><i class="fab fa-linkedin text-base"></i></a>
+                </div>
             </div>
-            <div class="flex space-x-6 text-slate-500">
-                <a href="https://facebook.com" target="_blank" class="hover:text-brand-orange transition text-xl"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com" target="_blank" class="hover:text-brand-orange transition text-xl"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com" target="_blank" class="hover:text-brand-orange transition text-xl"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com" target="_blank" class="hover:text-brand-orange transition text-xl"><i class="fab fa-x-twitter"></i></a>
+
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-[10px] text-white/15 tracking-[0.3em] uppercase">
+                    &copy; 2026 RB Technical Solutions. All rights reserved.
+                </p>
+                <a href="https://rbinvestments.us" target="_blank" class="text-[10px] text-white/15 hover:text-white/30 transition tracking-widest uppercase mt-4 md:mt-0">
+                    A Robust Business Investments Company
+                </a>
             </div>
-        </div>
-        <div class="text-center mt-12 text-[10px] text-navy-700 tracking-[0.3em] uppercase">
-            &copy; 2025 RB Technical Solutions. All rights reserved.
         </div>
     </footer>
 
     <script>
+        // Mobile menu
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             if (menu.classList.contains('hidden')) {
@@ -376,6 +809,24 @@
                 setTimeout(() => menu.classList.add('hidden'), 300);
             }
         }
+
+        // Nav shadow on scroll
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Scroll-triggered animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

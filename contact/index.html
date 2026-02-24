@@ -26,14 +26,18 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: {
-                            400: '#3b7bbf',
-                            500: '#1a5a9e',
-                            600: '#174d87',
-                            700: '#143f6e',
-                            800: '#0f2f52',
-                            900: '#0a1f37',
-                            950: '#071525',
+                        teal: {
+                            50: '#effcfc',
+                            100: '#d6f5f5',
+                            200: '#b0eaec',
+                            300: '#7ad9de',
+                            400: '#3dbfc8',
+                            500: '#0e7490',
+                            600: '#0c6379',
+                            700: '#0a5c73',
+                            800: '#0d4a5c',
+                            900: '#0f3d4e',
+                            950: '#042733',
                         },
                         brand: {
                             orange: '#e8621a',
@@ -47,52 +51,57 @@
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+        *, *::before, *::after { box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             scroll-behavior: smooth;
+            background: #ffffff;
+            color: #1e293b;
         }
 
-        .heading-font {
-            font-family: 'Space Grotesk', sans-serif;
-        }
+        .heading-font { font-family: 'Outfit', sans-serif; }
+        .logo-r { color: #0e7490; font-family: 'Outfit', sans-serif; font-weight: 800; }
+        .logo-b { color: #e8621a; font-family: 'Outfit', sans-serif; font-weight: 800; margin-left: -0.12em; }
 
         .glass-nav {
-            background: rgba(7, 21, 37, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(14, 116, 144, 0.06);
+            box-shadow: 0 1px 24px rgba(14, 116, 144, 0.08);
         }
 
-        .gradient-text {
-            background: linear-gradient(90deg, #e8621a, #f5a623);
+        .orange-gradient-text {
+            background: linear-gradient(135deg, #e8621a, #f07a3a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .logo-r { color: #1a5a9e; font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
-        .logo-b { color: #e8621a; font-family: 'Space Grotesk', sans-serif; font-weight: 700; margin-left: -0.15em; }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.12;
-            pointer-events: none;
-        }
-        .orb-1 { width: 500px; height: 500px; background: #e8621a; top: -100px; right: -150px; }
-        .orb-2 { width: 400px; height: 400px; background: #1a5a9e; bottom: -80px; left: -100px; }
-
-        .form-field:focus-within {
-            border-color: #e8621a;
-            box-shadow: 0 0 0 3px rgba(232, 98, 26, 0.08);
+        .circuit-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0v20h20' fill='none' stroke='%230e7490' stroke-width='0.5' opacity='0.06'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%230e7490' opacity='0.04'/%3E%3Cpath d='M60 0v40h40' fill='none' stroke='%230e7490' stroke-width='0.5' opacity='0.06'/%3E%3Ccircle cx='60' cy='40' r='2' fill='%230e7490' opacity='0.04'/%3E%3Cpath d='M100 0v60' fill='none' stroke='%230e7490' stroke-width='0.5' opacity='0.06'/%3E%3Ccircle cx='100' cy='60' r='2' fill='%230e7490' opacity='0.04'/%3E%3Cpath d='M0 80h80v40' fill='none' stroke='%230e7490' stroke-width='0.5' opacity='0.06'/%3E%3Ccircle cx='80' cy='80' r='2' fill='%230e7490' opacity='0.04'/%3E%3C/svg%3E");
         }
 
-        @keyframes fadeSlideUp {
+        .form-field { transition: all 0.3s ease; }
+        .form-field:focus {
+            border-color: #0e7490;
+            box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.06);
+        }
+
+        .channel-card { transition: all 0.3s ease; }
+        .channel-card:hover {
+            border-color: rgba(14, 116, 144, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -8px rgba(14, 116, 144, 0.08);
+        }
+
+        @keyframes fadeUp {
             from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .animate-in { animation: fadeSlideUp 0.6s ease-out both; }
+        .animate-in { animation: fadeUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) both; }
         .delay-1 { animation-delay: 0.08s; }
         .delay-2 { animation-delay: 0.16s; }
         .delay-3 { animation-delay: 0.24s; }
@@ -101,109 +110,102 @@
         .delay-6 { animation-delay: 0.48s; }
         .delay-7 { animation-delay: 0.56s; }
 
-        .dot-grid {
-            background-image: radial-gradient(circle at 2px 2px, rgba(26, 90, 158, 0.08) 1px, transparent 0);
-            background-size: 32px 32px;
-        }
-
         @keyframes subtlePulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(232, 98, 26, 0.3); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(232, 98, 26, 0.2); }
             50% { box-shadow: 0 0 0 8px rgba(232, 98, 26, 0); }
         }
         .btn-pulse:hover { animation: subtlePulse 2s infinite; }
 
-        .channel-card { transition: all 0.3s ease; }
-        .channel-card:hover { border-color: rgba(232, 98, 26, 0.3); transform: translateY(-2px); }
+        .accent-line { width: 48px; height: 3px; background: #e8621a; }
     </style>
 </head>
-<body class="bg-navy-950 text-slate-100 antialiased min-h-screen relative overflow-x-hidden">
-
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
+<body class="antialiased min-h-screen relative">
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="flex items-center gap-2">
-                <span class="text-3xl font-bold tracking-tighter heading-font"><span class="logo-r">R</span><span class="logo-b">B</span></span>
-                <span class="text-sm font-bold uppercase tracking-[0.15em] text-slate-400 hidden sm:inline">Techs</span>
+                <span class="text-3xl font-bold tracking-tighter"><span class="logo-r">R</span><span class="logo-b">B</span></span>
+                <span class="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 hidden sm:inline heading-font">Technical Solutions</span>
             </a>
-            <div class="hidden lg:flex space-x-10 text-xs font-bold uppercase tracking-[0.2em] text-slate-400 items-center">
-                <a href="/#services" class="hover:text-brand-orange transition">Services</a>
-                <a href="/#about" class="hover:text-brand-orange transition">Why Us</a>
+            <div class="hidden lg:flex items-center space-x-10 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                <a href="/#services" class="hover:text-teal-500 transition">Services</a>
+                <a href="/#pricing" class="hover:text-teal-500 transition">Pricing</a>
+                <a href="/#about" class="hover:text-teal-500 transition">Why Us</a>
                 <span class="text-brand-orange">Contact</span>
             </div>
-            <button class="lg:hidden text-2xl" onclick="toggleMenu()">
+            <button class="lg:hidden text-2xl text-teal-700" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-navy-950 z-[60] hidden flex flex-col items-center justify-center space-y-8 text-2xl heading-font uppercase">
-        <button class="absolute top-10 right-10 text-3xl" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
-        <a href="/#services">Services</a>
-        <a href="/#about">Why Us</a>
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] hidden flex flex-col items-center justify-center space-y-8 text-2xl heading-font font-bold">
+        <button class="absolute top-10 right-10 text-3xl text-teal-700" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+        <a href="/#services" class="text-teal-700">Services</a>
+        <a href="/#pricing" class="text-teal-700">Pricing</a>
+        <a href="/#about" class="text-teal-700">Why Us</a>
         <span class="text-brand-orange">Contact</span>
     </div>
 
     <!-- Main Content -->
-    <main class="relative z-10 pt-28 pb-20 px-6 dot-grid min-h-screen flex items-center">
+    <main class="relative z-10 pt-28 pb-20 px-6 circuit-pattern min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto w-full">
             <div class="grid lg:grid-cols-5 gap-16 items-start">
 
-                <!-- Left Column -->
+                <!-- Left Column — Context & Channels -->
                 <div class="lg:col-span-2 lg:sticky lg:top-32">
                     <div class="animate-in delay-1">
-                        <p class="text-brand-orange font-bold uppercase tracking-[0.2em] text-[11px] mb-4">Get in Touch</p>
-                        <h1 class="text-4xl md:text-5xl font-bold leading-[1.15] heading-font mb-6">
-                            Let's Talk About Your <span class="gradient-text">IT Needs.</span>
+                        <div class="accent-line mb-8"></div>
+                        <h1 class="text-4xl md:text-5xl font-extrabold leading-[1.15] heading-font text-slate-900 mb-6">
+                            Let's Talk About Your <span class="orange-gradient-text">IT Needs.</span>
                         </h1>
-                        <p class="text-slate-400 leading-relaxed mb-10">
+                        <p class="text-slate-500 leading-relaxed mb-10">
                             Whether you need a full IT audit, network security overhaul, or everyday technical support — we're here to help.
                         </p>
                     </div>
 
                     <!-- Contact Channels -->
                     <div class="space-y-4 animate-in delay-3">
-                        <a href="tel:8327363240" class="channel-card flex items-center gap-4 p-4 rounded-2xl border border-navy-800 bg-navy-900/50">
-                            <div class="w-11 h-11 rounded-xl bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center flex-shrink-0">
+                        <a href="tel:8327363240" class="channel-card flex items-center gap-4 p-4 rounded-2xl border border-slate-100 bg-white shadow-sm">
+                            <div class="w-11 h-11 rounded-xl bg-brand-orange/[0.06] border border-brand-orange/10 flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-phone text-brand-orange"></i>
                             </div>
                             <div>
-                                <p class="text-sm font-semibold">832-736-3240</p>
-                                <p class="text-xs text-slate-500">Call us directly</p>
+                                <p class="text-sm font-semibold text-slate-800">832-736-3240</p>
+                                <p class="text-xs text-slate-400">Call us directly</p>
                             </div>
-                            <i class="fas fa-arrow-right text-slate-600 text-xs ml-auto"></i>
+                            <i class="fas fa-arrow-right text-slate-300 text-xs ml-auto"></i>
                         </a>
 
-                        <div class="channel-card flex items-center gap-4 p-4 rounded-2xl border border-navy-800 bg-navy-900/50">
-                            <div class="w-11 h-11 rounded-xl bg-navy-500/10 border border-navy-500/20 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-navy-400"></i>
+                        <div class="channel-card flex items-center gap-4 p-4 rounded-2xl border border-slate-100 bg-white shadow-sm">
+                            <div class="w-11 h-11 rounded-xl bg-teal-500/[0.06] border border-teal-500/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-teal-600"></i>
                             </div>
                             <div>
-                                <p class="text-sm font-semibold">Houston, Texas</p>
-                                <p class="text-xs text-slate-500">Local on-site service available</p>
+                                <p class="text-sm font-semibold text-slate-800">Houston, Texas</p>
+                                <p class="text-xs text-slate-400">Local on-site service available</p>
                             </div>
                         </div>
 
                         <div class="flex gap-3 pt-2">
-                            <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-xl border border-navy-800 bg-navy-900/50 flex items-center justify-center text-slate-500 hover:text-brand-orange hover:border-brand-orange/30 transition"><i class="fab fa-facebook-f text-sm"></i></a>
-                            <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-xl border border-navy-800 bg-navy-900/50 flex items-center justify-center text-slate-500 hover:text-brand-orange hover:border-brand-orange/30 transition"><i class="fab fa-instagram text-sm"></i></a>
-                            <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-xl border border-navy-800 bg-navy-900/50 flex items-center justify-center text-slate-500 hover:text-brand-orange hover:border-brand-orange/30 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
-                            <a href="https://x.com" target="_blank" class="w-10 h-10 rounded-xl border border-navy-800 bg-navy-900/50 flex items-center justify-center text-slate-500 hover:text-brand-orange hover:border-brand-orange/30 transition"><i class="fab fa-x-twitter text-sm"></i></a>
+                            <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-xl border border-slate-100 bg-white shadow-sm flex items-center justify-center text-slate-400 hover:text-brand-orange hover:border-brand-orange/20 transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                            <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-xl border border-slate-100 bg-white shadow-sm flex items-center justify-center text-slate-400 hover:text-brand-orange hover:border-brand-orange/20 transition"><i class="fab fa-instagram text-sm"></i></a>
+                            <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-xl border border-slate-100 bg-white shadow-sm flex items-center justify-center text-slate-400 hover:text-brand-orange hover:border-brand-orange/20 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
+                            <a href="https://x.com" target="_blank" class="w-10 h-10 rounded-xl border border-slate-100 bg-white shadow-sm flex items-center justify-center text-slate-400 hover:text-brand-orange hover:border-brand-orange/20 transition"><i class="fab fa-x-twitter text-sm"></i></a>
                         </div>
                     </div>
 
                     <div class="mt-8 flex items-center gap-3 animate-in delay-4">
                         <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <p class="text-xs text-slate-500 uppercase tracking-widest font-medium">Typically responds within 24 hours</p>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-[0.15em] font-bold">Typically responds within 24 hours</p>
                     </div>
                 </div>
 
                 <!-- Right Column — Form -->
                 <div class="lg:col-span-3">
-                    <div class="bg-navy-800/40 backdrop-blur-sm border border-navy-700/60 rounded-[32px] p-8 md:p-12 animate-in delay-2">
+                    <div class="bg-[#f7f8fa] border border-slate-100 rounded-[32px] p-8 md:p-12 shadow-sm animate-in delay-2">
                         <form id="contact-form" onsubmit="handleSubmit(event)">
                             <input type="hidden" name="access_key" value="13d70201-919c-4463-885d-8ffb572b87f8">
                             <input type="hidden" name="subject" value="New inquiry from rbtechs.us">
@@ -211,23 +213,23 @@
 
                             <div class="grid md:grid-cols-2 gap-5 mb-5">
                                 <div class="animate-in delay-3">
-                                    <label for="name" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-500 mb-2.5">Full Name</label>
-                                    <input type="text" id="name" name="name" required placeholder="Jane Doe" class="form-field w-full bg-navy-950/60 border border-navy-700 rounded-xl px-5 py-4 text-sm focus:outline-none transition placeholder:text-slate-600">
+                                    <label for="name" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2.5">Full Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="Jane Doe" class="form-field w-full bg-white border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none placeholder:text-slate-300">
                                 </div>
                                 <div class="animate-in delay-4">
-                                    <label for="email" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-500 mb-2.5">Email</label>
-                                    <input type="email" id="email" name="email" required placeholder="jane@company.com" class="form-field w-full bg-navy-950/60 border border-navy-700 rounded-xl px-5 py-4 text-sm focus:outline-none transition placeholder:text-slate-600">
+                                    <label for="email" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2.5">Email</label>
+                                    <input type="email" id="email" name="email" required placeholder="jane@company.com" class="form-field w-full bg-white border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none placeholder:text-slate-300">
                                 </div>
                             </div>
 
                             <div class="mb-5 animate-in delay-4">
-                                <label for="company" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-500 mb-2.5">Company / Website <span class="text-slate-600 normal-case tracking-normal">(optional)</span></label>
-                                <input type="text" id="company" name="company" placeholder="company.com" class="form-field w-full bg-navy-950/60 border border-navy-700 rounded-xl px-5 py-4 text-sm focus:outline-none transition placeholder:text-slate-600">
+                                <label for="company" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2.5">Company / Website <span class="text-slate-300 normal-case tracking-normal">(optional)</span></label>
+                                <input type="text" id="company" name="company" placeholder="company.com" class="form-field w-full bg-white border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none placeholder:text-slate-300">
                             </div>
 
                             <div class="mb-5 animate-in delay-5">
-                                <label for="service" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-500 mb-2.5">Service Interest</label>
-                                <select id="service" name="service" class="form-field w-full bg-navy-950/60 border border-navy-700 rounded-xl px-5 py-4 text-sm focus:outline-none transition text-slate-400">
+                                <label for="service" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2.5">Service Interest</label>
+                                <select id="service" name="service" class="form-field w-full bg-white border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none text-slate-500">
                                     <option value="" disabled selected>Select a service...</option>
                                     <option>Small Business Consulting</option>
                                     <option>Computer & Network Security</option>
@@ -239,18 +241,18 @@
                             </div>
 
                             <div class="mb-8 animate-in delay-6">
-                                <label for="message" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-500 mb-2.5">How Can We Help?</label>
-                                <textarea id="message" name="message" required rows="5" placeholder="Tell us about your IT needs, current challenges, or project goals..." class="form-field w-full bg-navy-950/60 border border-navy-700 rounded-xl px-5 py-4 text-sm focus:outline-none transition resize-none placeholder:text-slate-600"></textarea>
+                                <label for="message" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2.5">How Can We Help?</label>
+                                <textarea id="message" name="message" required rows="5" placeholder="Tell us about your IT needs, current challenges, or project goals..." class="form-field w-full bg-white border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none resize-none placeholder:text-slate-300"></textarea>
                             </div>
 
-                            <button type="submit" id="submit-btn" class="btn-pulse w-full bg-brand-orange text-white font-bold py-5 rounded-xl hover:bg-brand-orange-light transition-all text-sm uppercase tracking-widest animate-in delay-7">
+                            <button type="submit" id="submit-btn" class="btn-pulse w-full bg-brand-orange text-white font-bold py-5 rounded-xl hover:bg-brand-orange-light transition-all text-sm uppercase tracking-[0.15em] animate-in delay-7 shadow-lg shadow-brand-orange/15 heading-font">
                                 Send Inquiry
                             </button>
                         </form>
 
                         <div id="status-message" class="hidden mt-6 text-center font-bold tracking-widest text-sm py-4 rounded-xl"></div>
 
-                        <p class="text-center text-[10px] text-slate-600 mt-6 tracking-wide">
+                        <p class="text-center text-[10px] text-slate-400 mt-6 tracking-wide">
                             Your information is handled with care and never shared with third parties.
                         </p>
                     </div>
@@ -261,19 +263,25 @@
     </main>
 
     <!-- Footer -->
-    <footer class="relative z-10 py-12 border-t border-navy-800/60">
+    <footer class="bg-teal-950 py-16">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-            <a href="/" class="mb-6 md:mb-0">
-                <span class="text-3xl font-bold tracking-tighter heading-font"><span class="logo-r">R</span><span class="logo-b">B</span></span>
-                <span class="text-sm font-bold uppercase tracking-[0.15em] text-slate-400 ml-2">Technical Solutions</span>
-            </a>
-            <div class="flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+            <div class="mb-6 md:mb-0 flex items-center gap-2">
+                <span class="text-3xl font-bold tracking-tighter"><span style="color:#3dbfc8">R</span><span style="color:#f07a3a">B</span></span>
+                <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 heading-font">Technical Solutions</span>
+            </div>
+            <div class="flex space-x-8 text-[11px] font-bold uppercase tracking-[0.15em] text-white/30">
+                <a href="/" class="hover:text-white transition">Home</a>
                 <a href="/#services" class="hover:text-white transition">Services</a>
-                <a href="/#about" class="hover:text-white transition">Why Us</a>
+                <a href="/#pricing" class="hover:text-white transition">Pricing</a>
             </div>
         </div>
-        <div class="text-center mt-8 text-[10px] text-navy-700 tracking-[0.3em] uppercase">
-            &copy; 2025 RB Technical Solutions. All rights reserved.
+        <div class="max-w-7xl mx-auto px-6 mt-10 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-[10px] text-white/15 tracking-[0.3em] uppercase">
+                &copy; 2026 RB Technical Solutions. All rights reserved.
+            </p>
+            <a href="https://rbinvestments.us" target="_blank" class="text-[10px] text-white/15 hover:text-white/30 transition tracking-widest uppercase mt-4 md:mt-0">
+                A Robust Business Investments Company
+            </a>
         </div>
     </footer>
 
@@ -307,18 +315,18 @@
                 });
                 const data = await response.json();
 
-                status.classList.remove('hidden', 'text-red-400', 'text-brand-orange', 'bg-red-500/10', 'bg-brand-orange/10');
+                status.classList.remove('hidden', 'text-red-500', 'text-teal-600', 'bg-red-50', 'bg-teal-50');
                 if (data.success) {
-                    status.classList.add('text-brand-orange', 'bg-brand-orange/10');
+                    status.classList.add('text-teal-600', 'bg-teal-50');
                     status.textContent = 'SUBMITTED — WE WILL BE IN TOUCH SHORTLY.';
                     form.reset();
                 } else {
-                    status.classList.add('text-red-400', 'bg-red-500/10');
+                    status.classList.add('text-red-500', 'bg-red-50');
                     status.textContent = 'SOMETHING WENT WRONG. PLEASE TRY AGAIN.';
                 }
             } catch {
-                status.classList.remove('hidden', 'text-brand-orange', 'text-red-400', 'bg-brand-orange/10', 'bg-red-500/10');
-                status.classList.add('text-red-400', 'bg-red-500/10');
+                status.classList.remove('hidden', 'text-teal-600', 'text-red-500', 'bg-teal-50', 'bg-red-50');
+                status.classList.add('text-red-500', 'bg-red-50');
                 status.textContent = 'NETWORK ERROR. PLEASE TRY AGAIN.';
             }
 
